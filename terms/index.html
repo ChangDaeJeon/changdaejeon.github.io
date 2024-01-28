@@ -54,17 +54,14 @@
 
 	<script>
         // 사용자의 환경을 감지하고 테마를 설정하는 함수
-        function detectAndSetTheme() {
-            const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-            // 사용자가 다크 모드를 선호하는 경우 dark-mode 클래스를 추가
-            if (prefersDarkMode) {
+        function detectAndSetTheme(theme) {
+            // 전달된 테마에 따라 스타일 설정
+            if (theme === 'dark') {
                 document.body.classList.add('dark-mode');
+            } else {
+                document.body.classList.add('light-mode');
             }
         }
-
-        // 페이지 로드 시 테마 감지 및 설정 함수 호출
-        window.onload = detectAndSetTheme;
     </script>
 
     <section>
